@@ -8,13 +8,19 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if (session()->has('error'))
+            <div class="alert alert-danger m-3" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="card-body">
             <table class="table mt-3">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Judul Buku</th>
                         <th>Member</th>
+                        <th>Judul Buku</th>
+                        <th>Jumlah Pinjam</th>
                         <th>Tanggal Pinjam</th>
                         <th>Tanggal Kembali</th>
                         <th>Status</th>
@@ -25,8 +31,9 @@
                     @foreach ($pinjam as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->buku->judul }}</td>
                             <td>{{ $data->user->nama }}</td>
+                            <td>{{ $data->buku->judul }}</td>
+                            <td>{{ $data->jumlah }}</td>
                             <td>{{ $data->tgl_pinjam }}</td>
                             <td>{{ $data->tgl_kembali }}</td>
                             <td>{{ $data->status }}</td>
@@ -70,7 +77,7 @@
                                 @enderror
                             </div>
                             <div class="form-gruop">
-                                <label for="">Nama Member</label>
+                                <label>Nama Member</label>
                                 <select wire:model="user" class="form-control">
                                     <option value="">---Pilih---</option>
                                     @foreach ($member as $data)
@@ -78,6 +85,13 @@
                                     @endforeach
                                 </select>
                                 @error('user')
+                                    <small class="form-text text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <div class="form-gruop">
+                                <label>Jumlah Pinjam :</label>
+                                <input type="number" wire:model="jumlah" class="form-control">
+                                @error('jumlah')
                                     <small class="form-text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
@@ -125,6 +139,13 @@
                                         @endforeach
                                     </select>
                                     @error('user')
+                                        <small class="form-text text-danger">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-gruop">
+                                    <label>Jumlah Pinjam :</label>
+                                    <input type="number" wire:model="jumlah" class="form-control">
+                                    @error('jumlah')
                                         <small class="form-text text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>

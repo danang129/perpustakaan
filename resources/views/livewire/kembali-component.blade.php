@@ -13,8 +13,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Judul Buku</th>
                         <th>Member</th>
+                        <th>Judul Buku</th>
+                        <th>Jumlah</th>
                         <th>Tanggal Pinjam</th>
                         <th>Tanggal Kembali</th>
                         <th>Status</th>
@@ -25,8 +26,9 @@
                     @foreach ($pinjam as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->buku->judul }}</td>
                             <td>{{ $data->user->nama }}</td>
+                            <td>{{ $data->buku->judul }}</td>
+                            <td>{{ $data->jumlah }}</td>
                             <td>{{ $data->tgl_pinjam }}</td>
                             <td>{{ $data->tgl_kembali }}</td>
                             <td>{{ $data->status }}</td>

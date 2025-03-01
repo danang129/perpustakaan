@@ -9,6 +9,7 @@
             </div>
         @endif
         <div class="card-body">
+            <input type="text" wire:model.live="cari" class="form-control m-2 w-50" placeholder="Cari...">
             <table class="table mt-3">
                 <thead>
                     <tr>

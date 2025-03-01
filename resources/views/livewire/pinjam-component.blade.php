@@ -1,7 +1,7 @@
 <div>
     <div class="card m-3">
         <div class="card-header">
-            <div class="card-title">Pinjam Buku</div>
+            <div class="card-title">Peminjaman Buku</div>
         </div>
         @if (session()->has('success'))
             <div class="alert alert-success m-3" role="alert">
@@ -14,6 +14,7 @@
             </div>
         @endif
         <div class="card-body">
+            <input type="text" wire:model.live="cari" class="form-control m-2 w-50" placeholder="Cari...">
             <table class="table mt-3">
                 <thead>
                     <tr>
@@ -57,7 +58,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Pinjam Buku</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Tambah Peminjaman Buku</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -110,7 +111,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Pinjam Buku</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Peminjaman Buku</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -164,7 +165,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Hapus Pinjam Buku</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Hapus Peminjaman Buku</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>

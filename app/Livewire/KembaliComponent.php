@@ -13,12 +13,35 @@ class KembaliComponent extends Component
 {
     use WithPagination, WithoutUrlPagination;
     protected $paginationTheme = 'bootstrap';
-    public $id, $judul, $member, $tgl_kembali, $status, $denda, $lama;
+    public $id, $judul, $member, $tgl_kembali, $status, $denda, $lama, $cari;
 
     public function render()
     {
+        $query = Pinjam::query();
+
+        if($this->cari != ""){
+            $searchTerms = explode(':', $this->cari);
+            if(count($searchTerms) == 2) {
+                $member = $searchTerms[0];
+                $judul = $searchTerms[1];
+                $query->whereHas('user', function($q) use ($member) {
+                          $q->where('nama', 'like', '%' . $member . '%');
+                      })
+                      ->whereHas('buku', function($q) use ($judul) {
+                          $q->where('judul', 'like', '%' . $judul . '%');
+                      });
+            } else {
+                $query->whereHas('user', function($q) {
+                          $q->where('nama', 'like', '%' . $this->cari . '%');
+                      })
+                      ->orWhereHas('buku', function($q) {
+                          $q->where('judul', 'like', '%' . $this->cari . '%');
+                      });
+            }
+        }
+
         $layout['title'] = 'Pengembalian Buku';
-        $data['pinjam'] = Pinjam::where('status', 'dipinjam')->paginate(10);
+        $data['pinjam'] = $query->paginate(10);
         return view('livewire.kembali-component', $data)->layoutData($layout);
     }
 

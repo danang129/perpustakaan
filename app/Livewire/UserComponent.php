@@ -13,20 +13,6 @@ class UserComponent extends Component
 
     protected $paginationTheme = "bootstrap";
     public $nama, $email, $password, $id, $cari;
-    
-    // public function render()
-    // {
-    //     $layout['title'] = "Kelola User";
-    //     if($this->cari != ""){
-    //         $data['user'] = User::where('nama','like','%' .$this->cari ."%")
-    //         ->orwhere('email','like','%' .$this->cari ."%")
-    //         ->paginate(10);
-    //     } else {
-    //         $data['user'] = User::paginate(10);
-    //     }
-        
-    //     return view('livewire.user-component', $data)->layoutData($layout);
-    // }
 
     public function render()
     {

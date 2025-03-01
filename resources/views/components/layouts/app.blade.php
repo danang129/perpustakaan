@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    {{-- <div class="wrapper"> --}}
         <div class="main">
             {{-- <div class="logo-header">
                 <a href="index.html" class="logo">
@@ -36,11 +36,9 @@
             <div class="main-panel">
                 
                 {{$slot}}
-                {{-- footer --}}
-                @include('components.layouts.footer')
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
     </div>
 </body>
 {{-- script --}}

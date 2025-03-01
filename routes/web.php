@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Livewire\BukuComponent;
 use App\Livewire\HomeComponent;
 use App\Livewire\KategoriComponent;

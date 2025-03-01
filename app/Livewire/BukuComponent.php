@@ -13,19 +13,19 @@ class BukuComponent extends Component
     use WithPagination, WithoutUrlPagination;
     protected $paginationTheme = 'bootstrap';
     public $id, $kategori, $judul, $penulis, $tahun, $jumlah, $cari;
+
     public function render()
     {
-        if($this->cari !=""){
-            $data['buku'] = Buku::where('judul','like' .$this->cari ."%")->paginate(10);
-        } else{
+        if($this->cari != ""){
+            $data['buku'] = Buku::where('judul', 'like', '%' . $this->cari . '%')->paginate(10);
+        } else {
             $data['buku'] = Buku::paginate(10);
-            
-
         }
         $data['kateg'] = Kategori::all();
         $layout['title'] = 'Kelola Buku';
         return view('livewire.buku-component', $data)->layoutData($layout);
     }
+
     public function store() {
         $this->validate([
             'judul'     => 'required',
@@ -48,7 +48,7 @@ class BukuComponent extends Component
             'jumlah' => $this->jumlah,
             'tahun' => $this->tahun,
         ]);
-        return redirect()->route('buku')->with('success','Berhasil di tambah!');
+        
     }
 
     public function edit($id){

@@ -85,7 +85,7 @@
             </li> --}}
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false">
-                    <span>{{ Auth::user()->nama }}</span>
+                    <span>Halo, {{ Auth::user()->nama }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     {{-- <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>

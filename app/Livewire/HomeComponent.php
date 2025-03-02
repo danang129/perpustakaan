@@ -11,7 +11,7 @@ class HomeComponent extends Component
 {
     public function render()
     {
-        $x['title'] = "Home Perpustakaan";
+        $x['title'] = "Perpustakaan - Beranda";
         $member = User::where('jenis','!=','admin')->count();
         $admin = User::where('jenis','!=','member')->count();
         $pinjam = Pinjam::all()->count();

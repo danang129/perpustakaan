@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Transaksi</p>
+                                    <p class="card-category">Peminjaman</p>
                                     <h4 class="card-title">{{ $pinjam }}</h4>
                                 </div>
                             </div>

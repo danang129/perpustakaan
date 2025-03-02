@@ -36,10 +36,6 @@
                             <td>
                                 <a href="#" wire:click="pilih({{$data->id}})" class="btn btn-sm btn-success"
                                     data-toggle="modal" data-target="#pilih">Pilih</a>
-                                {{-- <a href="" wire:click="edit({{ $data->id }})" class="btn btn-sm btn-info"
-                                    data-toggle="modal" data-target="#edituser">Edit</a>
-                                <a href="" wire:click="confirm({{ $data->id }})"
-                                    class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapususer">Hapus</a> --}}
                             </td>
                         </tr>
                     @endforeach

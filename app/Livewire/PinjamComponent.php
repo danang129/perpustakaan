@@ -43,7 +43,7 @@ class PinjamComponent extends Component
         $data['member']     = User::where('jenis','member')->get();
         $data['bukuu']       = Buku::all();
         $data['pinjam']     = $query->where('status','dipinjam')->paginate(10);
-        $layout['title']    = 'Pinjam Buku';
+        $layout['title']    = 'Perpustakaan - Peminjaman Buku';
         return view('livewire.pinjam-component', $data)->layoutData($layout);
     }
 

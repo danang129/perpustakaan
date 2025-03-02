@@ -20,7 +20,7 @@ class KategoriComponent extends Component
             $data['kategori'] = Kategori::paginate(10);
         }
 
-        $layout['title'] = 'Kelola Kategori Buku';
+        $layout['title'] = 'Perpustakaan - Kelola Kategori';
         return view('livewire.kategori-component', $data)->layoutData($layout);
     }
 

@@ -17,7 +17,7 @@ class KembaliComponent extends Component
 
     public function render()
     {
-        $query = Pinjam::query();
+        $query = Pinjam::query()->where('status','dipinjam');
 
         if($this->cari != ""){
             $searchTerms = explode(':', $this->cari);
@@ -40,7 +40,7 @@ class KembaliComponent extends Component
             }
         }
 
-        $layout['title'] = 'Pengembalian Buku';
+        $layout['title'] = 'Perpustakaan - Pengembalian Buku';
         $data['pinjam'] = $query->paginate(10);
         return view('livewire.kembali-component', $data)->layoutData($layout);
     }

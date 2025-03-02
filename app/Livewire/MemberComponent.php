@@ -21,7 +21,7 @@ class MemberComponent extends Component
         } else {
             $data['member'] = User::where('jenis','member')->paginate(10);
         }
-       $layout['title'] = 'Kelola Member';
+       $layout['title'] = 'Perpustakaan - Kelola Member';
         return view('livewire.member-component', $data)->layoutData($layout);
     }
 

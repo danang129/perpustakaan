@@ -9,7 +9,7 @@
             </div>
         @endif
         <div class="card-body">
-            <input type="text" wire:model.live="cari" class="form-control m-2 w-50" placeholder="Cari Judul Buku...">
+            <input type="text" wire:model.live="cari" class="form-control m-2 w-50" placeholder="Cari...">
             <table class="table mt-3">
                 <thead>
                     <tr>
@@ -23,7 +23,6 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $data->nama }}</td>
-                            <td>{{ $data->alamat }}</td>
                             <td>
                                 <a href="" wire:click="edit({{ $data->id }})" class="btn btn-sm btn-info"
                                     data-toggle="modal" data-target="#edituser">Edit</a>

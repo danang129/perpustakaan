@@ -22,7 +22,7 @@ class BukuComponent extends Component
             $data['buku'] = Buku::paginate(10);
         }
         $data['kateg'] = Kategori::all();
-        $layout['title'] = 'Kelola Buku';
+        $layout['title'] = 'Perpustakaan - Kelola Buku';
         return view('livewire.buku-component', $data)->layoutData($layout);
     }
 

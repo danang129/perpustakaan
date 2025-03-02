@@ -11,7 +11,7 @@ class LoginComponent extends Component
     public $email, $password;
     public function render()
     {
-        return view('livewire.login-component')->layout('components.layouts.login');
+        return view('auth.login-component')->layout('components.layouts.login');
     }
     public function proses(){
         $credential = $this->validate(

@@ -16,7 +16,7 @@ class UserComponent extends Component
 
     public function render()
     {
-        $layout['title'] = 'Kelola Admin';
+        $layout['title'] = 'Perpustakaan - Kelola Admin';
 
         $user = User::where('jenis', 'admin')
                     ->where(function($query) {
